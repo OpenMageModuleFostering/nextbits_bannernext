@@ -28,4 +28,20 @@ class NextBits_BannerNext_Block_Widget extends Mage_Core_Block_Template implemen
 	public function _getBannerImageCollection($bannerCollection){
 		return $bannerCollection->getData();	
 	}
+	
+	public function getSortedImages($content){
+		$imagesArray = json_decode($content,true);
+		if(isset($imagesArray) && !empty($imagesArray) && count($imagesArray)>0){
+			$temp = array();
+			foreach($imagesArray as $key=>$image){
+				if($image['disabled']){
+					unset($imagesArray[$key]);
+					continue;
+				}
+				$temp[$key] = $image['position'];
+			}				
+			array_multisort($temp, SORT_ASC, $imagesArray);
+		}
+		return $imagesArray;
+	}
 }

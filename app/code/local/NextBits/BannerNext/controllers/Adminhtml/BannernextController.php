@@ -1,5 +1,5 @@
 <?php
-class NextBits_BannerNext_Adminhtml_BannernextController extends Mage_Adminhtml_Controller_action
+class NextBits_BannerNext_Adminhtml_BannernextController extends Mage_Adminhtml_Controller_Action
 {
 	public function uploadAction()
 	{
@@ -309,39 +309,6 @@ class NextBits_BannerNext_Adminhtml_BannernextController extends Mage_Adminhtml_
 		$this->_redirect('*/*/index');
 	}
 
-	public function exportCsvAction()
-	{
-		$fileName   = 'bannernext.csv';
-		$content    = $this->getLayout()->createBlock('bannernext/adminhtml_bannernext_grid')
-		->getCsv();
-
-		$this->_sendUploadResponse($fileName, $content);
-	}
-
-	public function exportXmlAction()
-	{
-		$fileName   = 'bannernext.xml';
-		$content    = $this->getLayout()->createBlock('bannernext/adminhtml_bannernext_grid')
-		->getXml();
-
-		$this->_sendUploadResponse($fileName, $content);
-	}
-
-	protected function _sendUploadResponse($fileName, $content, $contentType='application/octet-stream')
-	{
-		$response = $this->getResponse();
-		$response->setHeader('HTTP/1.1 200 OK','');
-		$response->setHeader('Pragma', 'public', true);
-		$response->setHeader('Cache-Control', 'must-revalidate, post-check=0, pre-check=0', true);
-		$response->setHeader('Content-Disposition', 'attachment; filename='.$fileName);
-		$response->setHeader('Last-Modified', date('r'));
-		$response->setHeader('Accept-Ranges', 'bytes');
-		$response->setHeader('Content-Length', strlen($content));
-		$response->setHeader('Content-type', $contentType);
-		$response->setBody($content);
-		$response->sendResponse();
-		die;
-	}
 	public function categoriesJsonAction()
     {
         $bannerId     = $this->getRequest()->getParam('id');
