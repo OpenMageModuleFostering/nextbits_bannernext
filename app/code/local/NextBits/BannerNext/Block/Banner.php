@@ -8,9 +8,9 @@ class NextBits_BannerNext_Block_Banner extends Mage_Core_Block_Template
     protected function _getCollection($position = null) {
 		$enabled = Mage::getStoreConfig('bannernext/general/active');
 		if($enabled){
-        if ($this->_collection ){		
+       /*  if ($this->_collection ){		
             return $this->_collection;
-        }
+        } */
         $storeId = Mage::app()->getStore()->getId();
         $this->_collection = Mage::getModel('bannernext/bannernext')->getCollection()
                 ->addEnableFilter($this->_isActive);

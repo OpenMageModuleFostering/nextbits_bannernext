@@ -17,7 +17,7 @@
         </routers>
         <layout>
             <updates>
-                <bannernext>
+				<bannernext module="NextBits_BannerNext">
                     <file>bannernext.xml</file>
                 </bannernext>
             </updates>
@@ -47,7 +47,7 @@
     <adminhtml>
 		<menu>
 			<bannernext module="bannernext">
-				<title>BannerNext</title>
+				<title>Banner Next</title>
 				<sort_order>71</sort_order>               
 				<children>
 					<items module="bannernext">
@@ -71,7 +71,7 @@
 				<admin>
 					<children>
 						<bannernext module="bannernext">
-								<title>BannerNext</title>
+								<title>Banner Next</title>
 								<sort_order>71</sort_order>               
 								<children>
 									<items module="bannernext">
