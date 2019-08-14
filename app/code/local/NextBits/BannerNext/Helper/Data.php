@@ -68,7 +68,7 @@ class NextBits_BannerNext_Helper_Data extends Mage_Core_Helper_Abstract
         return Mage::getStoreConfig(self::XML_CONFIG_PATH . $key, $store = '');
     }
 	
-	public function resizeImg($fileName,$width,$height='')
+	public function resizeImg($fileName,$width='',$height='')
 	{
 		$baseURL = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
 		$imageURL = $baseURL .'/'.'bannernext'.'/'.$fileName;

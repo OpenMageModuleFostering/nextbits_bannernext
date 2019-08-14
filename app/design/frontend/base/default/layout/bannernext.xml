@@ -7,6 +7,12 @@
 		<block type="bannernext/banner" name="bannernext_content_bottom" template="bannernext/banner.phtml" after="-" >
 			<action method="setPosition"><name>CONTENT_BOTTOM</name></action>
 		</block>
+		<block type="bannernext/banner" name="bannernext_content_background" template="bannernext/background.phtml" after="-" >
+			<action method="setPosition"><name>BODY_BACKGROUND</name></action>
+		</block>
+		<reference name="head">
+	        <action method="insert" ifconfig="bannernext/general/active"><block>bannernext_content_background</block></action>			
+        </reference>
 	</default>
 	<cms_page>		
 		<reference name="content">

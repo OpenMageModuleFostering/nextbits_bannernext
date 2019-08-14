@@ -14,6 +14,10 @@ class NextBits_BannerNext_Model_Config_Source_Page
 			'value' =>'',
 			'label' =>'',
 		);
+		$_result[] =array(
+			'value' => '9999999',
+			'label' => 'All Pages => For Background Position only',
+		);
         foreach ($_collection as $item) {
             $data = array(
                 'value' => $item->getData('page_id'),

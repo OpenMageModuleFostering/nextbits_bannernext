@@ -33,7 +33,7 @@ class NextBits_BannerNext_Block_Adminhtml_Bannernext_Edit_Tab_Form extends Mage_
 			'required'  => false,
 			'name'      => 'height',
 			'class'     =>'validate-number',
-			'note'   =>'E.g you want to width 100px then need to only 100 into textbox'
+			'note'   =>'E.g you want to height 100px then need to only 100 into textbox'
 		));
 		
 		$fieldset->addField('width', 'text', array(

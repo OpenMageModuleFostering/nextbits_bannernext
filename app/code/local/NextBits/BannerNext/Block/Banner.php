@@ -6,6 +6,7 @@ class NextBits_BannerNext_Block_Banner extends Mage_Core_Block_Template
     protected $_collection;
 
     protected function _getCollection($position = null) {
+		$position = $this->getData('position');
 		$enabled = Mage::getStoreConfig('bannernext/general/active');
 		if($enabled){
        /*  if ($this->_collection ){		
@@ -18,6 +19,19 @@ class NextBits_BannerNext_Block_Banner extends Mage_Core_Block_Template
             $this->_collection->addStoreFilter($storeId);
         }
 
+		$origColl = Mage::getModel('bannernext/bannernext')->getCollection()
+                ->addEnableFilter($this->_isActive);
+		if (!Mage::app()->isSingleStoreMode()) {
+            $origColl->addStoreFilter($storeId);
+        }
+		
+		$origColl2 = Mage::getModel('bannernext/bannernext')->getCollection()
+                ->addEnableFilter($this->_isActive);
+		if (!Mage::app()->isSingleStoreMode()) {
+            $origColl2->addStoreFilter($storeId);
+        }
+		
+		
         if (Mage::registry('current_category')) {
             $_categoryId = Mage::registry('current_category')->getId();
             $this->_collection->addCategoryFilter($_categoryId);
@@ -38,9 +52,29 @@ class NextBits_BannerNext_Block_Banner extends Mage_Core_Block_Template
 		print_R($this->_collection->getData());
 		echo "</pre>"; */
 		//Mage::registry('banner_collection',$this->_collection);
-        return $this->_collection;
-		}else
-		{
+			
+				if($position=='BODY_BACKGROUND'){
+					
+					
+					if (Mage::registry('current_category')) {
+						$_categoryId = Mage::registry('current_category')->getId();
+						$origColl->addCategoryFilter($_categoryId);
+					} elseif (Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms') {
+						$_pageId = Mage::getBlockSingleton('cms/page')->getPage()->getPageId();
+						$origColl->addPageFilter($_pageId);
+					}
+					$origColl->addPositionFilter('BODY_BACKGROUND');
+					$coll = $origColl->getData();
+					
+					if(empty($coll)){
+						$origColl2->addPageFilter('9999999');					
+						return $origColl2;
+					}					
+					return $origColl;
+						
+				}	
+			return $this->_collection;
+		}else{
 			return '';
 		}
     }

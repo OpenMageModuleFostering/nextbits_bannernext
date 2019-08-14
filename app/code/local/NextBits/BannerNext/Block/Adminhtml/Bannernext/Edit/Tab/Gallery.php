@@ -63,28 +63,41 @@ class NextBits_BannerNext_Block_Adminhtml_Bannernext_Edit_Tab_Gallery extends Ma
         );
     }
 
-    public function getImagesJson()
+  /*   public function getImagesJson()
     {
 		$model = Mage::registry('bannernext_data');
 		if(isset($model['content']) && !empty($model['content'])){
 			return $model->getData('content');
 		}
-		return '[]';
-		
-		
-        /* if(is_array($this->getElement()->getValue())) {
-            $value = $this->getElement()->getValue();
-            if(count($value['images'])>0) {
-                foreach ($value['images'] as &$image) {
-                    $image['url'] = Mage::getSingleton('catalog/product_media_config')
-                                        ->getMediaUrl($image['file']);
-                }
-                return Mage::helper('core')->jsonEncode($value['images']);
-            }
-        }
-        return '[]'; */
+		return '[]';		
+    } */
+	
+	public function getImagesJson()
+    {
+		  $model = Mage::registry('bannernext_data');
+		  if(isset($model['content']) && !empty($model['content'])){
+			   $content = Mage::helper('core')->jsonDecode($model->getData('content'));
+			   $this->aasort($content,"position");
+			   $content = Mage::helper('core')->jsonEncode($content);
+			   Mage::log($content,'7','77.log');
+			   return $content;
+			   //return $model->getData('content');
+		  }
+		  return '[]';
     }
-
+	function aasort (&$array, $key) {
+		$sorter = array();
+		$ret = array();
+		reset($array);
+		foreach ($array as $ii => $va) {
+		   $sorter[$ii]=$va[$key];
+		}
+		asort($sorter);
+		foreach ($sorter as $ii => $va) {
+		   $ret[]=$array[$ii];
+		}
+		$array = $ret;
+	}
     public function getImagesValuesJson()
     {
         $values = array();

@@ -55,36 +55,6 @@
 					</fields>
 				</general>
 			</groups>
-		</bannernext>
-		<!-- <license module="bannernext">
-				<label>License Manager</label>
-				<tab>NextBits_Extensions</tab>
-				<frontend_type>text</frontend_type>
-				<sort_order>10</sort_order>
-				<show_in_default>1</show_in_default>
-				<show_in_website>1</show_in_website>
-				<show_in_store>1</show_in_store>
-				<groups>
-					<bannernext_license  translate="label">
-						<label>Banner Next License</label>
-						<frontend_type>text</frontend_type>
-						<sort_order>0</sort_order>
-						<show_in_default>1</show_in_default>
-						<show_in_website>1</show_in_website>
-						<show_in_store>1</show_in_store>
-						 <fields>
-								<domains translate="label">
-									<frontend_type>text</frontend_type>
-									<frontend_model>NextBits_Nbcore_Block_Adminhtml_System_Config_Form_Multiline</frontend_model>
-									<backend_model>NextBits_Nbcore_Model_System_Config_Backend_License</backend_model>
-									<sort_order>1</sort_order>
-									<show_in_default>1</show_in_default>
-									<show_in_website>0</show_in_website>
-									<show_in_store>0</show_in_store>
-								</domains>
-						</fields>
-					</bannernext_license>
-				</groups>
-		</license> -->
+		</bannernext>		
     </sections>
 </config>
