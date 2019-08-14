@@ -71,3 +71,4 @@
 -------------------------------------------------------------- */
 .box_skitter_large {width:800px;height:300px;}
 .box_skitter_small {width:200px;height:100px;}
+.box_skitter_large {z-index: 0 !important; } /* Menu z-index issue */
