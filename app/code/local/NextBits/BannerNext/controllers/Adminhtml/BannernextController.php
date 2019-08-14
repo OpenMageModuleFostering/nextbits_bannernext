@@ -5,7 +5,13 @@ class NextBits_BannerNext_Adminhtml_BannernextController extends Mage_Adminhtml_
 	{
 		try {
 			//Mage::log($_FILES);
-			$uploader = new Mage_Core_Model_File_Uploader('image');
+			/* $mageVersion = Mage::getVersionInfo();
+			if($mageVersion<'1.5.1.0'){
+				$uploader = new Mage_Core_Model_File_Uploader('image');
+			}else{				
+				$uploader = new Varien_File_Uploader('image');
+			} */
+			$uploader = new Varien_File_Uploader('image');
 			$uploader->setAllowedExtensions(array('jpg','jpeg','gif','png'));
 			$uploader->addValidateCallback('catalog_product_image',
 			Mage::helper('catalog/image'), 'validateUploadFile');
