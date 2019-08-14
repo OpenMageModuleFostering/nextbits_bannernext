@@ -70,21 +70,33 @@
 				</all>
 				<admin>
 					<children>
-						<NextBits_BannerNext>
-							<title>BannerNext Module</title>
-							<sort_order>10</sort_order>
-						</NextBits_BannerNext>
-						<system>
-							<children>
-								<config>
-									<children>
-										<bannernext translate="title" module="bannernext">
-											<title>NextBits BannerNext Section</title>
-										</bannernext>
-									</children>
-								</config>
-							</children>
-						</system>
+						<bannernext module="bannernext">
+								<title>BannerNext</title>
+								<sort_order>71</sort_order>               
+								<children>
+									<items module="bannernext">
+										<title>Manage Banners</title>
+										<sort_order>0</sort_order>
+										<action>bannernext/adminhtml_bannernext</action>
+									</items>
+									<items2 module="bannernext">
+										<title>Add Banner</title>
+										<sort_order>0</sort_order>
+										<action>bannernext/adminhtml_bannernext/new</action>
+									</items2>
+								</children>
+							</bannernext>
+							<system>
+								<children>
+									<config>
+										<children>
+											<bannernext translate="title" module="bannernext">
+												<title>NextBits BannerNext Section</title>
+											</bannernext>
+										</children>
+									</config>
+								</children>
+							</system>
 					</children>
 				</admin>
 			</resources>
