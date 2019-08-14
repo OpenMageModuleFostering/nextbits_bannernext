@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<widgets>
+	<bannernext type="bannernext/widget" translate="Adds banner into page/block" module="bannernext">
+		<name>BannerNext - Add Banner</name>
+		<description type="desc">Adds banner into page/block</description>
+		<parameters>
+			<banner_id>
+				<label>Banner Name</label>
+				<visible>1</visible>
+				<required>1</required>
+				<type>select</type>
+				<source_model>bannernext/availablebanners</source_model>
+			</banner_id>
+			<template>  
+					<visible>0</visible>  
+					<value>bannernext/banner.phtml</value>  
+			</template>			
+		</parameters>
+	</bannernext>
+</widgets>

@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<config>
+    <!-- <tabs>
+		<NextBits_BannerNext translate="label" module="bannernext">
+			<label>NextBits BannerNext</label>
+			<sort_order>100</sort_order>
+		</NextBits_BannerNext>
+    </tabs> -->
+	<tabs>
+		<NextBits_Extensions translate="label" module="checkoutnext">
+			<label>NextBits - Extensions</label>
+			<sort_order>100</sort_order>
+		</NextBits_Extensions>
+    </tabs>
+   <sections>
+       <bannernext>
+			<label>Banner Next</label>
+            <tab>NextBits_Extensions</tab>
+            <class>nextbits-bannernext</class>
+            <frontend_type>text</frontend_type>
+            <sort_order>150</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+			<groups>
+                    <general translate="label">
+                        <label>General</label>
+                        <frontend_type>text</frontend_type>
+                        <sort_order>0</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                        <fields>
+                            <active translate="label">
+                                <label>Enable BannerNext</label>
+                                <frontend_type>select</frontend_type>
+                                <source_model>adminhtml/system_config_source_yesno</source_model>
+                                <sort_order>1</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>1</show_in_store>
+                            </active>
+							<jquery>
+								<label>Enable jQuery</label>
+                                <frontend_type>select</frontend_type>
+                                <source_model>adminhtml/system_config_source_yesno</source_model>
+                                <sort_order>2</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>1</show_in_store>
+							</jquery>
+							<responsive_banner>
+								<label>Enable Responsive Banner</label>
+                                <frontend_type>select</frontend_type>
+                                <source_model>adminhtml/system_config_source_yesno</source_model>
+                                <sort_order>3</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>1</show_in_website>
+                                <show_in_store>1</show_in_store>
+							</responsive_banner>
+							
+                        </fields>
+					</general>
+			</groups>
+		</bannernext>
+		<!-- <license module="bannernext">
+				<label>License Manager</label>
+				<tab>NextBits_Extensions</tab>
+				<frontend_type>text</frontend_type>
+				<sort_order>10</sort_order>
+				<show_in_default>1</show_in_default>
+				<show_in_website>1</show_in_website>
+				<show_in_store>1</show_in_store>
+				<groups>
+					<bannernext_license  translate="label">
+						<label>Banner Next License</label>
+						<frontend_type>text</frontend_type>
+						<sort_order>0</sort_order>
+						<show_in_default>1</show_in_default>
+						<show_in_website>1</show_in_website>
+						<show_in_store>1</show_in_store>
+						 <fields>
+								<domains translate="label">
+									<frontend_type>text</frontend_type>
+									<frontend_model>NextBits_Nbcore_Block_Adminhtml_System_Config_Form_Multiline</frontend_model>
+									<backend_model>NextBits_Nbcore_Model_System_Config_Backend_License</backend_model>
+									<sort_order>1</sort_order>
+									<show_in_default>1</show_in_default>
+									<show_in_website>0</show_in_website>
+									<show_in_store>0</show_in_store>
+								</domains>
+						</fields>
+					</bannernext_license>
+				</groups>
+		</license> -->
+    </sections>
+</config>

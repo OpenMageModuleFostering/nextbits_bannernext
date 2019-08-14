@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<default>
+		<block type="bannernext/banner" name="bannernext_content_top" template="bannernext/banner.phtml" before="-" >
+		  <action method="setPosition"><name>CONTENT_TOP</name></action>
+		</block>
+		<block type="bannernext/banner" name="bannernext_content_bottom" template="bannernext/banner.phtml" after="-" >
+			<action method="setPosition"><name>CONTENT_BOTTOM</name></action>
+		</block>
+	</default>
+	<cms_page>		
+		<reference name="content">
+	        <action method="insert" ifconfig="bannernext/general/active"><block>bannernext_content_top</block></action>
+			<action method="append" ifconfig="bannernext/general/active"><block>bannernext_content_bottom</block></action>
+        </reference>
+    </cms_page>
+	<catalog_category_default>
+		<reference name="content">
+	        <action method="insert" ifconfig="bannernext/general/active"><block>bannernext_content_top</block></action>
+			<action method="append" ifconfig="bannernext/general/active"><block>bannernext_content_bottom</block><after>-</after></action>
+        </reference>
+	</catalog_category_default>
+	<catalog_category_layered>
+		<reference name="content">
+	        <action method="insert" ifconfig="bannernext/general/active"><block>bannernext_content_top</block></action>
+			<action method="append" ifconfig="bannernext/general/active"><block>bannernext_content_bottom</block></action>
+        </reference>
+	</catalog_category_layered>
+</layout> 

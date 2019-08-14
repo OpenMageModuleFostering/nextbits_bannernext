@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/NextBits_BannerNext",
+    "type": "magento-module",
+    "license": "Open-Software-License-(OSL)",
+    "homepage": "",
+    "description": "NextBits BannerNext Magento extension for image  slider",
+    "authors": [
+    {
+        "name": "NextBits Web Solutions Pvt. Ltd.",
+        "email": "nextbitswebsolutions@gmail.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
