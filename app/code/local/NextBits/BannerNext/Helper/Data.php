@@ -1,5 +1,5 @@
 <?php
-class Nextbits_BannerNext_Helper_Data extends Mage_Core_Helper_Abstract
+class NextBits_BannerNext_Helper_Data extends Mage_Core_Helper_Abstract
 {
 	/**
      * Path for config.
