@@ -1,3 +1,5 @@
+
+
 ## Original Package Description
 
 NextBits BannerNext Magento extension for image  slider

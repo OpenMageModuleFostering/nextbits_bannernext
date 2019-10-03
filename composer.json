@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/NextBits_BannerNext",
+    "name": "openmage-module-fostering\/nextbits_bannernext",
     "type": "magento-module",
-    "license": "Open-Software-License-(OSL)",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "NextBits BannerNext Magento extension for image  slider",
     "authors": [
